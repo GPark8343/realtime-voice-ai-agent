@@ -1,0 +1,36 @@
+[
+  {
+    "name": "get_order_info",
+    "description": "주문번호 또는 전화번호로 주문 상태를 조회한다.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_id": {"type": ["string", "null"], "description": "주문번호"},
+        "buyer_cellphone": {"type": ["string", "null"], "description": "구매자 전화번호"}
+      }
+    }
+  },
+  {
+    "name": "search_products",
+    "description": "상품명/키워드로 상품 정보를 검색한다.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {"type": "string", "description": "검색어"}
+      },
+      "required": ["query"]
+    }
+  },
+  {
+    "name": "request_callback",
+    "description": "상담원 콜백을 요청한다.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "customer_name": {"type": "string"},
+        "phone_number": {"type": "string"}
+      },
+      "required": ["customer_name", "phone_number"]
+    }
+  }
+]

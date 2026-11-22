@@ -1,0 +1,15 @@
+{
+  "get_order_info": [
+    {
+      "arguments": {"order_id": "20260101-0000001", "buyer_cellphone": null},
+      "result": {"status": "ok", "data": {"orders": [{"주문번호": "20260101-0000001", "배송상태": "배송중"}]}}
+    }
+  ],
+  "search_products": [
+    {
+      "arguments": {"query": "비타민C"},
+      "result": {"status": "ok", "data": {"결과": [{"제품명": "데모몰 비타민C 1000"}]}}
+    }
+  ],
+  "request_callback": []
+}
