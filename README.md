@@ -1,7 +1,10 @@
 # Realtime Voice AI Customer Service Agent
 
-> GDGoC Korea University × GenerativeLab 해커톤(DIRECT:ON 2026) 4인 팀 프로젝트에서 제가 담당한 파트(`agent_server/`)만 발췌한 레포입니다.
-> 해커톤에서 제공된 실제 브랜드/고객 데이터는 규정상 공개할 수 없어 전부 제외했고, `data/`는 코드가 그대로 동작하도록 직접 새로 만든 가상 예시 데이터입니다.
+## 해커톤 참가 배경
+
+**GDG on Campus Korea University × GenerativeLab**이 주최한 기업 연계 해커톤 **"DIRECT:ON 2026"**에 4인 팀으로 참가해 만든 프로젝트입니다. 과제는 건강기능식품 쇼핑몰의 전화 고객 상담을 대신하는 **실시간 음성 AI 상담원**을 구현하는 것이었고, 저는 그중 STT·LLM·TTS 파이프라인과 모의 함수 서버 구현을 맡았습니다. 이 레포는 팀 전체 코드 중 **제가 담당한 파트(`agent_server/`, `mock_tools/`)만 발췌**한 것입니다.
+
+> 해커톤에서 제공된 실제 브랜드·고객 데이터는 규정상 외부 공개가 금지되어 있어 전부 제외했고, `data/`는 코드가 그대로 동작하도록 직접 새로 만든 가상 예시 데이터입니다.
 
 ## 무엇을 만들었나
 
@@ -28,6 +31,9 @@ bash start_server.sh                    # 상담 서버, :9000
 pytest tests/ -q
 ```
 
-## 팀 프로젝트 안내
+## 담당 역할
 
-4인 팀(`GDG on Campus Korea University` 소속)으로 진행한 해커톤 과제였고, 이 레포는 그중 제가 구현한 실시간 음성 파이프라인(`agent_server/`, `mock_tools/`)만 담았습니다. STT/LLM/TTS 연동, 모의 함수 서버 설계, 프롬프트 규칙 설계, 버그 발견·수정, 테스트 작성을 담당했습니다.
+- **구현**: `agent_server/`(STT·LLM 함수호출·TTS 파이프라인), `mock_tools/`(모의 함수 서버) 전체
+- **설계**: WebSocket 턴 핸들러 구조, 상담원 핸드오프 기준, 모의 서버 매칭 알고리즘
+- **문제 해결**: LLM 게이트웨이 PII 마스킹 우회, TTS 비스트리밍 한계 완화, 말 끝 감지 이중 안전장치
+- **검증**: 크레딧 0 테스트 구조 설계, 반복 평가를 통한 버그 분석
